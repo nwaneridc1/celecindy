@@ -100,9 +100,8 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full h-auto py-20 lg:h-screen xl:h-screen flex items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+    <div className="relative w-full overflow-hidden h-auto py-20 lg:h-screen xl:h-screen flex items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
       {/* Injected CSS for keyframes & utility classes */}
-      
 
       {/* BACKGROUND IMAGE */}
       <div
@@ -117,7 +116,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-[-10] pointer-events-none">
         <div className="absolute inset-0 bg-black/55 backdrop-blur-sm" />
         {/* floating ambient light blobs */}
-        {/* <div className="absolute left-1/4 -top-40 w-[520px] h-[520px] rounded-full bg-cyan-400/8 blur-[120px] animate-slowMove" /> */}
+        <div className="absolute left-1/4 -top-40 w-[520px] h-[520px] rounded-full bg-cyan-400/8 blur-[120px] animate-slowMove" />
         <div className="absolute -right-40 top-1/4 w-[420px] h-[420px] rounded-full bg-indigo-500/6 blur-[100px] animate-slowMove" />
       </div>
 
@@ -366,11 +365,11 @@ const StatCard = ({ label, value, sub }) => {
       </p>
 
       <div className="mt-10 flex gap-4">
-        <p className="text-xl sm:text-xl font-bold font-ovo text-white leading-none overflow-hidden">
+        <p className="text-xl sm:text-xl font-bold font-ovo  text-white leadig-none overflow-hidden">
           {count}
           {suffix}
         </p>
-        <p className="text-xl lg:text-sm mt-1 font-semibold text-gray-100 whitespace-nowrap overflow-hidden">
+        <p className="text-xl lg:text-sm font-semibold  text-gray-100 whitespace-nowrap overflow-hidden">
           {sub}
         </p>
       </div>

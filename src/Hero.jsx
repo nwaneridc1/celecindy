@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { assets } from "./assets/asset"; // adjust path if needed
+import WhyChooseUs from "./Components/WhychoosUs";
 
 const TABS = ["Study", "Work", "Visit", "Consultation"];
 
@@ -100,7 +101,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden h-auto py-20 lg:h-screen xl:h-screen flex items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+    <div className="relative w-full overflow-hidden h-auto pt-20 flex items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
       {/* Injected CSS for keyframes & utility classes */}
 
       {/* BACKGROUND IMAGE */}
@@ -108,13 +109,16 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-[-20]"
         style={{
           backgroundImage: `url(${assets.study})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
         aria-hidden
       />
 
       {/* Dark overlay + ambient lights */}
       <div className="absolute inset-0 z-[-10] pointer-events-none">
-        <div className="absolute inset-0 bg-black/55 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
         {/* floating ambient light blobs */}
         <div className="absolute left-1/4 -top-40 w-[520px] h-[520px] rounded-full bg-cyan-400/8 blur-[120px] animate-slowMove" />
         <div className="absolute -right-40 top-1/4 w-[420px] h-[420px] rounded-full bg-indigo-500/6 blur-[100px] animate-slowMove" />
@@ -134,10 +138,10 @@ export default function Hero() {
         <div className="space-y-6 max-w-3xl relative">
           <h1 className="font-bold text-4xl sm:text-6xl leading-tight font-serif drop-shadow-lg">
             <span className="text-red-500">Celecindy </span>Travel's
-            International
+            {/* International */}
           </h1>
 
-          <p className="text-lg sm:text-xl leading-relaxed text-gray-100/90 max-w-2xl">
+          <p className="text-md sm:text-lg md:text-xl font-serif text-gray-100 leading-relaxed font-medium mt-4">
             Your trusted partner for study, work, visit, and immigration
             support. We guide you through every step of your journey with expert
             assistance, ensuring a smooth, stress-free and successful travel
@@ -268,6 +272,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+        <WhyChooseUs />
       </motion.div>
     </div>
   );
@@ -278,23 +283,24 @@ const TabCard = ({ title, text }) => {
   return (
     <div className="relative group">
       {/* moving gradient border container */}
-      <div
-        className={`absolute -inset-[1.5px] rounded-xl p-[2px] animate-borderSlide`}
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(99,102,241,0.9) 0%, rgba(16,185,129,0.9) 50%, rgba(99,102,241,0.9) 100%)",
-          zIndex: 0,
-        }}
-      />
 
-      <div className="relative bg-gray-50 rounded-xl shadow-2xl p-6 z-10">
-        <p className="text-lg font-bold font-serif text-gray-800">{title}</p>
+      <div
+        className="relative backdrop-blur-3xl text-gray-100 rounded-xl shadow-2xl p-6 z-10 border border-white/20 hover:border-teal-300/40 
+                         hover:shadow-teal-300/40"
+      >
+        <div
+          className="absolute -inset-[1.5px]  p-[2px] rounded-xl border-2 border-transparent 
+                         bg-gradient-to-r from-teal-300/20 to-teal-300/10  
+                         opacity-0 hover:opacity-100 blur-[2px] transition-all duration-700 animate-borderSlide"
+        ></div>
+
+        <p className="text-lg font-bold font-serif text-black">{title}</p>
 
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-3 mt-4">
-          <p className="flex-1 text-md font-ovo text-gray-700">{text}</p>
+          <p className="flex-1 text-md font-ovo">{text}</p>
           <button
             type="button"
-            className="bg-gradient-to-r from-indigo-600 to-teal-400 sm:max-w-[60%] max-h-12 px-4 py-2 rounded-xl font-semibold font-serif text-white shadow-md hover:scale-[1.01] transition-transform"
+            className="bg-gradient-to-r from-indigo-500 to-teal-400 sm:max-w-[60%] max-h-12 px-4 py-2 rounded-xl font-semibold font-serif text-white shadow-md hover:scale-[1.01] transition-transform"
           >
             Browse products
           </button>
@@ -356,20 +362,27 @@ const StatCard = ({ label, value, sub }) => {
   const suffix = suffixMatch ? suffixMatch[1] : "";
 
   return (
-    <div className="bg-gradient-to-r from-indigo-500 to-teal-400 rounded-xl shadow-3xl p-5 w-full relative">
+    <div
+      className="relative backdrop-blur-3xl text-gray-100 rounded-xl shadow-2xl p-6 z-10 border border-white/20 hover:border-teal-300/40 
+                         hover:shadow-teal-300/40"
+    >
       {/* inner soft glow */}
-      <div className="absolute -top-10 -right-10 w-36 h-36 bg-white/8 rounded-full blur-2xl pointer-events-none" />
+      <div
+        className="absolute -inset-[1.5px]  p-[2px] rounded-xl border-2 border-transparent 
+                         bg-gradient-to-r from-teal-300/20 to-teal-300/10  
+                         opacity-0 hover:opacity-100 blur-[2px] transition-all duration-700 animate-borderSlide"
+      ></div>
 
       <p className="text-sm font-semibold text-white font-serif whitespace-nowrap">
         {label}
       </p>
 
       <div className="mt-10 flex gap-4">
-        <p className="text-xl sm:text-xl font-bold font-ovo  text-white leadig-none overflow-hidden">
+        <p className="text-xl sm:text-xl font-bold font-ovo text-white leadig-none overflow-hidden">
           {count}
           {suffix}
         </p>
-        <p className="text-xl lg:text-sm font-semibold  text-gray-100 whitespace-nowrap overflow-hidden">
+        <p className="text-xl lg:text-sm font-semibold lg:pt-1 text-gray-100 whitespace-nowrap overflow-hidden">
           {sub}
         </p>
       </div>

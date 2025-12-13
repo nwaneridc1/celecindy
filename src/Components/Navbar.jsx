@@ -44,7 +44,7 @@ const Navbar = () => {
           Home
         </NavLink>
         <NavLink
-          to={"/"}
+          to={"/about"}
           className="flex flex-col items-center text-gray- 700  hover:text-gray-900 no-underline"
         >
           About Us
@@ -53,7 +53,7 @@ const Navbar = () => {
           to={"/"}
           className="flex flex-col items-center text-gray- 700  hover:text-gray-900 no-underline"
         >
-          Products
+          Services
         </NavLink>
         {/* <NavLink className="flex flex-col items-center text-gray- 700  hover:text-gray-900 no-underline">
           Services
@@ -91,7 +91,7 @@ const Navbar = () => {
         </div>
 
         <a
-          href="https://wa.me/2347040948945?text=Hello%2C%20I'm%20reaching%20out%20from%20your%20website,%20I%20want%20to%20become%20a%20seller..."
+          href="https://wa.me/+1613869-3234?text=Hello,%2C%20I%20am%20reaching%20out%20from%20your%20website,%20can%I%20know%20more%20about%20your%20serices?%20..."
           target="_blank"
           rel="noopener noreferrer"
           className="hidden lg:flex items-center gap-3 px-6 py-2 border border-gray-500 rounded-full ml-4 hover:bg-green-50 hover:text-black transition dark:border-white/50"
@@ -122,18 +122,18 @@ const Navbar = () => {
         <NavLink onClick={closeMenu} to={"/"}>
           Home
         </NavLink>
-        <NavLink to={"/"} onClick={closeMenu}>
+        <NavLink to={"/about"} onClick={closeMenu}>
           About Us
         </NavLink>
         <NavLink onClick={closeMenu} to={"/"}>
-          Services
+          Our Services
         </NavLink>
         {/* <NavLink onClick={closeMenu}>Services</NavLink> */}
         <NavLink onClick={closeMenu} to={"/"}>
           Contact Us
         </NavLink>
         <a
-          href="https://wa.me/2347040948945?text=Hello%2C%20I'm%20reaching%20out%20from%20your%20website,%20I%20want%20to%20become%20a%20seller..."
+          href="https://wa.me/+1613869-3234?text=Hello,%2C%20I%20am%20reaching%20out%20from%20your%20website,%20can%I%20know%20more%20about%20your%20serices?%20..."
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-2 py-2 mt-4 border border-gray-500 rounded-full hover:bg-green-50 hover:text-black transition dark:border-white/50"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import { assets } from "../assets/asset";
 
@@ -165,7 +165,7 @@ Opportunities exist for permanent residency and career growth in major Irish cit
   visit: [
     {
       id: 1,
-      title: "Dubai Tour Visa",
+      title: "Dubai Tourist Visa",
       image:  assets.dubai,
       description:
         "Dubai travel visa with itinerary planning, hotel booking, and guidance.",
@@ -267,8 +267,8 @@ const FeaturedPackages = () => {
   const [modalData, setModalData] = useState(null);
 
   return (
-    <section className="w-full py-14 px-6 sm:px-12 lg:px-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="w-full py-14 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 bg-white">
+      <div className="max-w-6xl mx-auto px- text-center">
         {/* Section title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -280,12 +280,12 @@ const FeaturedPackages = () => {
         </motion.h2>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex justify-center gap-3 mb-12">
           {["study", "work", "visit"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 rounded-full text-sm font-medium border transition ${
+              className={`px-3 py-2 rounded-full text-sm :font-medium border transition ${
                 activeTab === tab
                   ? "bg-gradient-to-r from-indigo-500 to-teal-400 rounded-xl py-2 text-white font-semibold font-serif text-white shadow-md hover:scale-[1.02] transition-transform"
                   : "bg-white text-gray-800 hover:bg-gray-200 font-semibold rounded-xl py-2 font-serif shadow-md hover:scale-[1.02] transition-transform"
@@ -310,20 +310,23 @@ const FeaturedPackages = () => {
             transition={{ duration: 0.45 }}
           >
             <Swiper
-              spaceBetween={20}
-              slidesPerView={1.2}
-              modules={[Autoplay]}
-              autoplay={{ delay: 2500, disableOnInteraction: false }}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
+             slidesPerView={1}
+        spaceBetween={20}
+        breakpoints={{
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        loop={true}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        modules={[Pagination, Autoplay]}
+        className="max-w-6xl mx-auto"
             >
               {packagesData[activeTab].map((item) => (
                 <SwiperSlide key={item.id}>
                   <motion.div
                     whileHover={{ scale: 1.03 }}
-                    className="rounded-xl shadow-lg bg-white overflow-hidden border"
+                    className="rounded-xl shadow-lg bg-white overflow-hidden border h-full"
                   >
                     <img
                       src={item.image}
@@ -342,7 +345,7 @@ const FeaturedPackages = () => {
 
                       <button
                         onClick={() => setModalData(item)}
-                        className="mt-4 w-full bg-gradient-to-r from-indigo-500 to-teal-400 py-2 rounded-xl font-semibold font-serif text-white shadow-md hover:scale-[1.02] transition-transform"
+                        className="mt-4 mb-10 w-full bg-gradient-to-r from-indigo-500 to-teal-400 py-2 rounded-xl font-semibold font-serif text-white shadow-md hover:scale-[1.02] transition-transform"
                       >
                         Learn More
                       </button>

@@ -159,7 +159,7 @@ const Destinations = () => {
                   <img
                     src={dest.image}
                     alt={dest.name}
-                    className="h-full w-full object-cover hover:scale-110 transition duration-700"
+                    className="w-full h-48 object-cover hover:scale-110 transition duration-700"
                   />
                 </div>
                 <div className="p-5">

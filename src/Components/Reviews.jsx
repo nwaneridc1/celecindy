@@ -75,7 +75,7 @@ const Reviews = () => {
           initial={{ opacity: 0, y: -25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+          // viewport={{ once: true }}
           className="text-white text-3xl sm:text-4xl md:text-5xl font-bold font-serif"
         >
           Our Client's Reviews
@@ -85,7 +85,7 @@ const Reviews = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
-          viewport={{ once: true }}
+          // viewport={{ once: true }}
           className="text-gray-200 max-w-2xl mx-auto mt-4 mb-12 font-serif text-md md:text-lg leading-relaxed"
         >
           From visas to vacations, our clients enjoy smooth, trustworthy, and
@@ -109,20 +109,22 @@ const Reviews = () => {
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
               {/* Fade-In Motion for Each Slide */}
-             <motion.div
-                         key={index}
-                         variants={fadeUp}
-                         initial="hidden"
-                         whileInView="show"
-                         viewport={{ once: true }}
-                         transition={{ duration: 0.6, delay: index * 0.2 }}
-                         className="px-8 py-10 h-[45vh] lg:h-[45vh] text-white rounded-xl shadow-2xl bg-white/10 backdrop-blur-2xl border border-white/20 hover:border-teal-300/40 
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="px-8 py-10 h-[45vh] lg:h-[45vh] text-white rounded-xl shadow-2xl bg-white/10 backdrop-blur-2xl border border-white/20 hover:border-teal-300/40 
                          hover:shadow-teal-300/40 transition-all duration-500 hover:scale-[1.03] relative overflow-hidden"
-                       >
-                         {/* Sliding Gradient Border */}
-                         <div className="absolute inset-0 rounded-xl border-2 border-transparent 
+              >
+                {/* Sliding Gradient Border */}
+                <div
+                  className="absolute inset-0 rounded-xl border-2 border-transparent 
                          bg-gradient-to-r from-teal-300/30 to-teal-300/30  
-                         opacity-0 hover:opacity-100 blur-[2px] transition-all duration-700"></div>
+                         opacity-0 hover:opacity-100 blur-[2px] transition-all duration-700"
+                ></div>
                 {/* Testimony */}
                 <p className="italic text-justify mb-10 font-serif leading-relaxed h-[50%]">
                   "{item.testimony}"

@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
         initial={{ opacity: 0, y: -25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+        // viewport={{ once: true }}
         className="pb-10 text-white text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-center"
       >
         Why Choose Us?

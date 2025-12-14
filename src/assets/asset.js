@@ -20,7 +20,10 @@ import italy from './italy.jpeg'
 import singapore from './singapore.jpeg'
 import germany from './germany.jpeg'
 import ireland from './ireland.jpeg'
-
+import about from './about.jpeg'
+import contact from './contactUs.jpeg'
+import services from './immigration.jpeg'
+import footer from './footer.jpeg'
 
 
 
@@ -37,5 +40,7 @@ export const assets = {
     location, verified,
     star, star_white, world,
     australia, canada, us, malta, france, luxembourg,
-    dubai, italy, singapore, germany, ireland
+    dubai, italy, singapore, germany, ireland,
+    about, services, contact,
+    footer
 }

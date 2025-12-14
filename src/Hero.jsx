@@ -101,7 +101,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden h-auto pt-20 flex items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+    <div className="relative w-full overflow-hidden h-auto pt-20 mt-1 lg:mt-4 flex items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
       {/* Injected CSS for keyframes & utility classes */}
 
       {/* BACKGROUND IMAGE */}

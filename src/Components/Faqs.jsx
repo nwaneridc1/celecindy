@@ -1,71 +1,89 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Questions = [
   {
-    question: "How do I schedule a property viewing?",
+    question: "How do I book a trip with Celecindy Travels?",
     answer:
-      "You can schedule a viewing directly from the property page by clicking 'Book Viewing' or by contacting the assigned agent. We'll confirm the time and send the details to your email or phone.",
+      "Simply choose your destination or service and submit a booking request. Our travel consultants will reach out to finalize arrangements and guide you step-by-step.",
   },
   {
-    question: "Can I rent a house directly from the website?",
+    question: "Do you assist with visa applications?",
     answer:
-      "Yes, we offer verified listings where you can inquire, book viewings, and start your rental process. Our agents will guide you through everything from inspection to payment and documentation.",
+      "Yes. We offer expert visa consultation and application support, ensuring your documents meet embassy standards for a smooth process.",
   },
   {
-    question: "Are the properties on your website verified?",
+    question: "Are your travel packages affordable and transparent?",
     answer:
-      "Absolutely. All properties are vetted for ownership and legal compliance before being listed to ensure safety and trust.",
+      "Absolutely. Our pricing is transparent with no hidden fees. You’ll receive a clear breakdown before confirming your booking.",
   },
   {
-    question: "What documents do I need to rent or buy a property?",
+    question: "Can I customize my travel package?",
     answer:
-      "Typically, you’ll need a valid ID, proof of income, and sometimes a reference. For purchases, proof of funds and a lawyer may be required. We’ll guide you through every step.",
+      "Yes. We design custom travel plans tailored to your budget, destination preferences, and travel purpose.",
   },
   {
-    question: "Do you charge any agency or service fees?",
+    question: "Do you offer flight and hotel reservations?",
     answer:
-      "Yes, a small service fee may apply depending on the property and transaction type. All fees are disclosed upfront — no hidden charges.",
+      "Yes. We handle flights, hotels, airport transfers, and travel insurance for a stress-free experience.",
   },
   {
-    question: "Can I list my property for rent or sale?",
+    question: "Is it safe to make payments through Celecindy Travels?",
     answer:
-      "Yes. You can list your property through our 'List a Property' form. An agent will reach out to verify the listing and publish it on the site.",
+      "Yes. We use secure payment channels to protect your data and transactions.",
   },
   {
-    question: "Do you help with property legal documentation?",
+    question: "Do you organize group tours and vacations?",
     answer:
-      "Yes. We provide legal guidance and connect you with verified legal professionals to handle contracts, agreements, and title verification.",
+      "Yes. We organize group tours, family vacations, honeymoons, and corporate travel experiences.",
   },
   {
-    question: "Is it safe to make payments through your platform?",
+    question: "How can I contact Celecindy Travels?",
     answer:
-      "Yes. We use secure payment gateways and offer escrow services for major transactions to protect both buyers and sellers.",
+      "You can reach us via our contact page, social media platforms, or direct WhatsApp and phone support.",
   },
 ];
 
 const FaqItem = ({ question, answer, isOpen, onClick }) => (
-  <div id='faq'
-    data-aos="fade-up"
-    className="bg-white rounded shadow-md p-6 text-left transition-all duration-300 cursor-pointer hover:shadow-lg"
+  <motion.div
+    layout
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4 }}
     onClick={onClick}
+    className="cursor-pointer rounded-xl p-6 shadow-md hover:shadow-xl transition-all
+      bg-white dark:bg-gray-900
+      border border-gray-200 dark:border-gray-800"
   >
     <div className="flex justify-between items-center">
-      <h3 className="text-md font-semibold font-serif text-gray-800 flex items-center">
+      <h3 className="font-serif font-semibold text-gray-800 dark:text-gray-100">
         {question}
       </h3>
-      <span className="text-2xl font-bold text-gray-500">
-        {isOpen ? '−' : '+'}
-      </span>
+      <motion.span
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        className="text-2xl font-bold text-gray-500 dark:text-gray-400"
+      >
+        {isOpen ? "−" : "+"}
+      </motion.span>
     </div>
 
-    <div
-      className={`mt-2 text-gray-600 text-sm overflow-hidden transition-all duration-300 ease-in-out ${
-        isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-      }`}
-    >
-      <p className="mt-2 text-lg font-ovo">{answer}</p>
-    </div>
-  </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.35 }}
+          className="overflow-hidden"
+        >
+          <p className="mt-4 text-lg font-ovo text-gray-600 dark:text-gray-300">
+            {answer}
+          </p>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </motion.div>
 );
 
 const Faq = () => {
@@ -74,62 +92,65 @@ const Faq = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // initial check
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const toggleOpen = (index) => {
-    setOpenIndex(prev => (prev === index ? null : index));
-  };
 
   const visibleQuestions =
     isMobile && !showAll ? Questions.slice(0, 5) : Questions;
 
   return (
-    <div className="text-center px-4 py-16">
-      <h1 className="text-[2.6vh] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-justify lg:text-center xl:text-center md:text-center font-bold text-gray-800 font-serif pb-8">
-            Most Frequently Asked Questions
-          </h1>
+    <section className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-20 text-center bg-gray-50 transition-colors">
+      <motion.h2
+        initial={{ opacity: 0, y: -25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        // viewport={{ once: true }}
+        className="text-black text-3xl sm:text-4xl md:text-5xl font-bold font-serif"
+      >
+        Frequently Asked Questions
+      </motion.h2>
 
-      <p className="text-gray-600 text-justify lg:text-center xl:text-center md:text-center max-w-2xl mx-auto mb-10 font-medium font-serif">
-        Whether you're buying, renting, or listing a property, we’ve got answers to your most common questions.
-        <div className="mt-1">
-          <strong className="text-gray-700">
-            — Here’s everything you need to know before making your next move.
-          </strong>
-        </div>
-      </p>
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        // viewport={{ once: true }}
+        className="text-gray-600 max-w-2xl mx-auto mt-4 mb-12 font-serif text-md md:text-lg leading-relaxed"
+      >
+        {" "}
+        Everything you need to know before planning your next journey with Celecindy Travels.
+        {/* </span> */}
+      </motion.p>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-justify">
         {visibleQuestions.map((item, index) => (
           <FaqItem
             key={index}
             question={item.question}
             answer={item.answer}
             isOpen={openIndex === index}
-            onClick={() => toggleOpen(index)}
+            onClick={() => setOpenIndex(openIndex === index ? null : index)}
           />
         ))}
       </div>
 
-      {/* Toggle Button for Mobile */}
       {isMobile && (
-        <div className="mt-8">
+        <div className="mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="bg-gray-700 hover:bg-gray-900 px-6 sm:px-12 py-3 rounded-full font-semibold text-white w-max mt-5 transition-all duration-300"
+            className="px-10 py-3 rounded-full font-semibold
+              bg-gray-800 
+              text-white 
+              hover:opacity-90 transition"
           >
-            {showAll ? 'Show Less' : 'Show More'}
+            {showAll ? "Show Less" : "Show More"}
           </button>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

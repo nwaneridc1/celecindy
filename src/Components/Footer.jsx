@@ -1,7 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaFacebook, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
+import { assets } from "../assets/asset";
+
+const socialLinks = [
+  {
+    icon: FaFacebook,
+    url: "https://facebook.com/celecindytravels",
+    label: "Facebook",
+  },
+  {
+    icon: FaInstagram,
+    url: "https://instagram.com/celecindytravels",
+    label: "Instagram",
+  },
+  {
+    icon: FaTwitter,
+    url: "https://twitter.com/celecindytravels",
+    label: "Twitter",
+  },
+  {
+    icon: FaTiktok,
+    url: "https://tiktok.com/@celecindytravels",
+    label: "TikTok",
+  },
+];
 
 const Footer = () => {
   return (
@@ -9,11 +33,16 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="bg-gradient-to-r from-indigo-500 to-teal-400 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-20 pb-10"
+      className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-20 pb-10"
+       style={{
+              backgroundImage: `url(${assets.footer})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundAttachment: "fixed",
+            }}
     >
       {/* Top Section */}
       <div className="flex flex-col sm:grid grid-cols-[1.5fr_1fr_1.5fr] gap-20">
-        
         {/* Logo + About */}
         <motion.div
           initial={{ x: -40, opacity: 0 }}
@@ -33,16 +62,20 @@ const Footer = () => {
           </p>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mt-4">
-            {[FaFacebook, FaInstagram, FaTwitter, FaTiktok].map((Icon, i) => (
-              <motion.div
+          <div className="flex gap-4">
+            {socialLinks.map(({ icon: Icon, url, label }, i) => (
+              <motion.a
                 key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
                 whileHover={{ scale: 1.15, rotate: 3 }}
-                whileTap={{ scale: 0.90 }}
-                className="p-2 bg-white/20 hover:bg-white transition duration-300 rounded-full fill-current backdrop-blur-md shadow-lg cursor-pointer"
+                whileTap={{ scale: 0.9 }}
+                className="p-3 bg-white/20 hover:bg-white transition duration-300 rounded-full backdrop-blur-md shadow-lg cursor-pointer"
               >
-                <Icon size={28} className="text-white hover:text-black" />
-              </motion.div>
+                <Icon size={20} className="text-gray-800"/>
+              </motion.a>
             ))}
           </div>
 
@@ -65,7 +98,7 @@ const Footer = () => {
             Company
           </p>
 
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-1 cursor-pointer">
             {[
               { name: "Home", to: "#" },
               { name: "About Us", to: "/" },
@@ -96,7 +129,7 @@ const Footer = () => {
             Customer Support
           </p>
 
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-1 cursor-pointe">
             {[
               "Account",
               "Frequently Asked Questions",

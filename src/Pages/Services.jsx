@@ -80,7 +80,7 @@ const fadeIn = (direction = "up", delay = 0) => {
   };
 };
 
-const About = () => {
+const Services = () => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => setShowModal(true);
@@ -95,7 +95,7 @@ const About = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-30"
             style={{
-              backgroundImage: `url(${assets.canada})`,
+              backgroundImage: `url(${assets.services})`,
               backgroundAttachment: "fixed",
             }}
             aria-hidden="true"
@@ -123,7 +123,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-serif mb-6"
             >
-              About Us
+              Our Services
             </motion.h2>
 
             {/* Breadcrumb */}
@@ -140,7 +140,7 @@ const About = () => {
 
               <Dot size={32} className="text-white/80" />
 
-              <span className="text-red-600 font-semibold cursor-pointer">About Us</span>
+              <span className="text-red-600 font-semibold cursor-pointer">Our Services</span>
             </motion.nav>
           </div>
         </div>
@@ -153,7 +153,7 @@ const About = () => {
           viewport={{ once: true }}
           className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 sm:gap-16 gap-5 items-center mb-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 sm:gap-16 gap-5 items-center mb-16">
             <motion.div
               variants={fadeIn("right", 0.2)}
               className="order-2 md:order-1"
@@ -172,10 +172,6 @@ const About = () => {
               <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif mb-3">
                 Empowering Global Visions
               </p>
-              <p className="text-gray-600 font-bold text-xl font-ovo mb-3">
-                – About Us
-              </p>
-
               <p className="text-gray-600 mx-auto mb-5 font-serif text-md leading-relaxed">
                 At <span className="font-bold">Celecindy Travels</span>, we are
                 committed to making global travel, study, and migration
@@ -265,64 +261,6 @@ const About = () => {
         </motion.section>
 
         {/* ---------- SECTION 2 ---------- */}
-        <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-10">
-            <motion.div variants={fadeIn("right", 0.2)}>
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif mb-3">
-                Our Story
-              </p>
-
-              <p className="text-gray-600 font-bold text-xl font-ovo mb-3">
-                – The Journey
-              </p>
-
-              <p className="text-gray-600 mx-auto mb-5 font-serif text-md leading-relaxed">
-                Our story began with a simple yet powerful vision — to make
-                global travel, education, and migration more accessible,
-                transparent, and stress-free for everyone. Over the years, we
-                observed how complex travel processes, unclear visa
-                requirements, and unreliable information prevented many people
-                from pursuing international opportunities.{" "}
-                <p className="mt-3">
-                  This challenge inspired the birth of Celecindy Travels. We set
-                  out to bridge the gap between dreams and destinations by
-                  working directly with verified institutions, embassies, and
-                  trusted global partners. From study abroad pathways to travel
-                  planning and visa guidance, our goal has always been to
-                  simplify the journey while keeping our clients fully informed
-                  and confident at every step.{" "}
-                </p>
-                <p className="mt-3">
-                  What started as a passion has grown into a trusted travel and
-                  migration consultancy built on integrity, professionalism, and
-                  personalized support. Celecindy Travels is more than a travel
-                  agency — it is a partner committed to helping you move
-                  forward, explore new horizons, and embrace global
-                  opportunities.{" "}
-                </p>
-                <p className="mt-3">
-                  We plan every detail, so you can focus on what truly matters —
-                  traveling with purpose and confidence.
-                </p>
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeIn("left", 0.3)}>
-              <img
-                src={assets.ireland}
-                alt="Our Story"
-                className="w-full  max-h-[86vh] object-cover rounded-xl shadow-md"
-              />
-            </motion.div>
-          </div>
-        </motion.section>
-
         <div className="relative overflow-hidden mb-12">
           {/* Background Image */}
           <div
@@ -445,4 +383,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Services;

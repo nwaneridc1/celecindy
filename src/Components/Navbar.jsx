@@ -50,7 +50,7 @@ const Navbar = () => {
           About Us
         </NavLink>
         <NavLink
-          to={"/"}
+          to={"/services"}
           className="flex flex-col items-center text-gray- 700  hover:text-gray-900 no-underline"
         >
           Services
@@ -59,7 +59,7 @@ const Navbar = () => {
           Services
         </NavLink> */}
         <NavLink
-          to={"/"}
+          to={"/contact"}
           className="flex flex-col items-center text-gray- 700  hover:text-gray-900 no-underline"
         >
           Contact Us
@@ -91,7 +91,7 @@ const Navbar = () => {
         </div>
 
         <a
-          href="https://wa.me/+1613869-3234?text=Hello,%2C%20I%20am%20reaching%20out%20from%20your%20website,%20can%I%20know%20more%20about%20your%20serices?%20..."
+          href="https://wa.me/+16138693234?text=Hello,%2C%20I%20am%20reaching%20out%20from%20your%20website,%20can%I%20know%20more%20about%20your%20serices?%20..."
           target="_blank"
           rel="noopener noreferrer"
           className="hidden lg:flex items-center gap-3 px-6 py-2 border border-gray-500 rounded-full ml-4 hover:bg-green-50 hover:text-black transition dark:border-white/50"
@@ -125,15 +125,15 @@ const Navbar = () => {
         <NavLink to={"/about"} onClick={closeMenu}>
           About Us
         </NavLink>
-        <NavLink onClick={closeMenu} to={"/"}>
+        <NavLink onClick={closeMenu} to={"/services"}>
           Our Services
         </NavLink>
         {/* <NavLink onClick={closeMenu}>Services</NavLink> */}
-        <NavLink onClick={closeMenu} to={"/"}>
+        <NavLink onClick={closeMenu} to={"/contact"}>
           Contact Us
         </NavLink>
         <a
-          href="https://wa.me/+1613869-3234?text=Hello,%2C%20I%20am%20reaching%20out%20from%20your%20website,%20can%I%20know%20more%20about%20your%20serices?%20..."
+          href="https://wa.me/+16138693234?text=Hello,%2C%20I%20am%20reaching%20out%20from%20your%20website,%20can%I%20know%20more%20about%20your%20serices?%20..."
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-2 py-2 mt-4 border border-gray-500 rounded-full hover:bg-green-50 hover:text-black transition dark:border-white/50"

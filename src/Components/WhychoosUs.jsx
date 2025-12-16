@@ -9,15 +9,15 @@ const WhyChooseUs = () => {
   const reasons = [
     {
       title: "Trusted & Professional Guidance",
-      text: "From study visas to work, tourism, and immigration support, our dedicated team ensures every requirement is handled with clarity and accuracy — stress-free and dependable.",
+      text: "From study visas to work, tourism, and immigration support, our dedicated team ensures every requirement is handled with clarity and accuracy, stress-free and dependable.",
     },
     {
       title: "Transparent & Reliable Processing",
-      text: "We provide verified information, honest timelines, and clear documentation procedures. No hidden charges — just a smooth, trustworthy process you can rely on.",
+      text: "We provide verified information, honest timelines, and clear documentation procedures. No hidden charges, just a smooth trustworthy process you can rely on.",
     },
     {
       title: "Personalized Support for Every Journey",
-      text: "Your travel goals are unique — and so is our approach. We walk with you before, during, and after your application to ensure a seamless and successful travel experience.",
+      text: "Your travel goals are unique and so is our approach. We walk with you before, during, and after your application to ensure a seamless and successful travel experience.",
     },
   ];
 

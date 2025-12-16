@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
-import { assets } from "../assets/asset";
 
 const socialLinks = [
   {
@@ -33,13 +32,7 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-20 pb-10"
-       style={{
-              backgroundImage: `url(${assets.footer})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed",
-            }}
+      className="bg-gradient-to-r from-indigo-500 to-teal-400 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-20 pb-10"
     >
       {/* Top Section */}
       <div className="flex flex-col sm:grid grid-cols-[1.5fr_1fr_1.5fr] gap-20">
@@ -51,7 +44,7 @@ const Footer = () => {
           className="space-y-6 max-w-3xl relative text-white"
         >
           <h1 className="font-bold text-3xl lg:text-4xl leading-tight font-serif drop-shadow-lg">
-            <span className="text-red-500">Celecindy </span>Travel's
+            <span className="text-red-500">Celecindy </span>Travels
           </h1>
 
           <p className="font-serif font-medium leading-relaxed text-gray-100/90">
@@ -72,7 +65,7 @@ const Footer = () => {
                 aria-label={label}
                 whileHover={{ scale: 1.15, rotate: 3 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 bg-white/20 hover:bg-white transition duration-300 rounded-full backdrop-blur-md shadow-lg cursor-pointer"
+                className="p-3 bg-white hover:bg-white/10 transition duration-300 rounded-full backdrop-blur-sm shadow-lg cursor-pointer"
               >
                 <Icon size={20} className="text-gray-800"/>
               </motion.a>
@@ -165,7 +158,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="text-center pt-8 font-semibold font-serif text-white hover:text-black"
+        className="text-center pt-8 font-serif text-white hover:text-black"
       >
         © {new Date().getFullYear()} Celecindy Travel's. All Rights Reserved.
       </motion.p>

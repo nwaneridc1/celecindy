@@ -94,7 +94,9 @@ const ContactUs = () => {
 
               <Dot size={32} className="text-white/80" />
 
-              <span className="text-red-600 font-semibold cursor-pointer">Contact Us</span>
+              <span className="text-red-600 font-semibold cursor-pointer">
+                Contact Us
+              </span>
             </motion.nav>
           </div>
         </div>
@@ -153,34 +155,30 @@ const ContactUs = () => {
             variants={fadeIn}
             className="bg-white px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 rounded-2xl shadow-md space-y-6"
           >
-            <div className="flex items-start gap-4">
-              <MapPin className="text-black mt-1" />
+            <div className="flex items-start mt-10 gap-4">
+              <div className=" mt-1">
+                <MapPin className="text-black" />
+              </div>
               <div>
                 <h4 className="font-semibold text-gray-800 text-lg font-serif">
                   Location
                 </h4>
-                <p className="text-gray-600 text-sm font-serif">
-                  At your service
+                <p className="text-gray-600 text-md font-serif">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  delectus dolor, alias
+                  molestiae.
                 </p>
               </div>
             </div>
-            {/* <div className="flex items-start gap-4">
-            <MapPin className="text-black mt-1" />
-            <div>
-              <h4 className="font-semibold text-gray-800">Asaba Branch</h4>
-              <p className="text-gray-600 text-sm">
-              Shop A30, First Edition Plaza, 297 Nnebisi Road, Opposite Saint Patrick's College, Asaba
-              </p>
-            </div>
-          </div> */}
+
             <div className="flex items-start gap-4">
               <PhoneCall className="text-black mt-1" />
               <div>
                 <h4 className="font-semibold text-gray-800 text-lg font-serif">
                   Phone
                 </h4>
-                <p className="text-gray-600 text-sm font-serif">
-                  +2349166418607
+                <p className="text-gray-600 text-md font-serif">
+                  +1234567890000
                 </p>
               </div>
             </div>
@@ -190,8 +188,19 @@ const ContactUs = () => {
                 <h4 className="font-semibold text-gray-800 text-lg font-serif">
                   Email
                 </h4>
-                <p className="text-gray-600 text-sm font-serif">
-                  elionphones@gmail.com
+                <p className="text-gray-600 text-md font-serif">
+                  celecindytravels@gmail.com
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <Mail className="text-black mt-1" />
+              <div>
+                <h4 className="font-semibold text-gray-800 text-lg font-serif">
+                  Support
+                </h4>
+                <p className="text-gray-600 text-md font-serif">
+                  celecindy.com
                 </p>
               </div>
             </div>

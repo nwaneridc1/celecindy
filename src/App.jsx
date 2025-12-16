@@ -9,7 +9,7 @@ import Services from "./Pages/Services";
 const App = () => {
   return (
     <div>
-      <div className="pb-16">
+      <div className="pb-14">
         <Navbar />
       </div>
       <Routes>

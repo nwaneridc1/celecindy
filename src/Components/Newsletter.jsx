@@ -40,28 +40,29 @@ const Newsletter = () => {
         transition={{ duration: 0.7, delay: 0.3 }}
         className="w-full max-w-xl mx-auto mt-12"
       >
-        <form
-          onSubmit={onSubmitHandler}
-          className="flex items-center rounded-full shadow-xl bg-white 
-          overflow-hidden border border-gray-300"
-        >
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="flex-1 py-4 px-6 font-serif text-gray-700 
-            focus:outline-none placeholder-gray-400"
-            required
-          />
+       <form
+  onSubmit={onSubmitHandler}
+  className="flex items-center rounded-full shadow-xl bg-white 
+  border border-gray-300 overflow-hidden"
+>
+  <input
+    type="email"
+    placeholder="Enter your email address"
+    className="flex-1 py-4 px-6 font-serif text-gray-700 
+    focus:outline-none placeholder-gray-400"
+    required
+  />
 
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-indigo-600 to-teal-500 
-            text-white px-8 py-4 font-serif font-semibold 
-            hover:opacity-90 transition-all"
-          >
-            Subscribe
-          </button>
-        </form>
+  <button
+    type="submit"
+    className="bg-gradient-to-r from-indigo-600 to-teal-500 
+    text-white px-8 py-4 font-serif font-semibold 
+    hover:opacity-90 transition-all"
+  >
+    Subscribe
+  </button>
+</form>
+
       </motion.div>
 
       {/* Soft Glow Accent */}

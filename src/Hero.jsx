@@ -294,7 +294,7 @@ const TabCard = ({ title, text }) => {
                          opacity-0 hover:opacity-100 blur-[2px] transition-all duration-700 animate-borderSlide"
         ></div>
 
-        <p className="text-lg font-bold font-serif text-black">{title}</p>
+        <p className="text-lg font-bold font-serif text-white">{title}</p>
 
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-3 mt-4">
           <p className="flex-1 text-md font-ovo">{text}</p>
